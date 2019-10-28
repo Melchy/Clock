@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
@@ -15,7 +14,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ClockNS\ClockNS.csproj" />
+      <ProjectReference Include="..\ClockTesting\ClockTesting.csproj" />
     </ItemGroup>
-
 </Project>

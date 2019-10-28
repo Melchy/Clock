@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClockNS
+namespace ClockTesting
 {
     public class OverrideClock : IDisposable
     {

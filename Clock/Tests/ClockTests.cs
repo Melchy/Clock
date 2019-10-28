@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using ClockNS;
+using ClockTesting;
 using FluentAssertions.Common;
 using Xunit;
 
-namespace Tests.ClockNS
+namespace Tests
 {
     public class ClockTests
     {
@@ -13,6 +13,7 @@ namespace Tests.ClockNS
         {
             var anonymousTime = new DateTimeOffset(2000, 1, 1, 0, 0, 0, TimeSpan.Zero);
             const int anonymousDelay = 2000;
+
             using var _ = new OverrideClock(anonymousTime);
             
             Task.Delay(anonymousDelay).Wait();
@@ -28,7 +29,7 @@ namespace Tests.ClockNS
             
             var anonymousTime = new DateTimeOffset(2000, 1, 1, 0, 0, 0, TimeSpan.Zero);
             const int anonymousDelay = 2000;
-            
+
             using (new OverrideClock(anonymousTime))
                 Task.Delay(anonymousDelay).Wait();
             

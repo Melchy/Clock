@@ -1,10 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>Melchy.Clock</PackageId>
+        <PackageId>Melchy.ClockTesting</PackageId>
         <Authors>Michal Motyčka</Authors>
         <Product>Melchy.Clock</Product>
         <Company>Michal Motyčka</Company>
@@ -12,12 +11,11 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
-        <PackageTags>DateTimeProvider, Clock</PackageTags>
+        <PackageTags>DateTimeProvider, Clock, Testing</PackageTags>
+        <PackageVersion>2.0.1</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="DateTimeProvider" Version="1.0.106" />
-      <PackageReference Include="DateTimeProvider.Analyser" Version="1.0.106" />
-      <PackageReference Include="Roslynator.Analyzers" Version="2.1.0" />
+      <ProjectReference Include="..\Clock\Clock.csproj" />
     </ItemGroup>
 </Project>

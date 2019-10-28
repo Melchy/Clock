@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Melchy.Clock</PackageId>
+        <Authors>Michal Motyčka</Authors>
+        <Product>Melchy.Clock</Product>
+        <Company>Michal Motyčka</Company>
+        <Description>Mockable global DateTime provider.</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
+        <PackageTags>DateTimeProvider, Clock</PackageTags>
+        <PackageVersion>2.0.1</PackageVersion>
+    </PropertyGroup>
+</Project>
