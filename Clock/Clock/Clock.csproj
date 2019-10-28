@@ -13,6 +13,6 @@
         <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
         <PackageTags>DateTimeProvider, Clock</PackageTags>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
 </Project>
