@@ -5,11 +5,11 @@
     <TargetFrameworks>netstandard2.1</TargetFrameworks>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Melchy.ClockAnalyser</PackageId>
+    <PackageId>ClockAnalyser</PackageId>
     <Authors>Michal Motyčka</Authors>
-    <Product>Melchy.Clock</Product>
+    <Product>ClockAnalyser</Product>
     <Company>Michal Motyčka</Company>
-    <Description>Analyser for Clock package.</Description>
+    <Description>Testable global DateTime.Now provider.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
