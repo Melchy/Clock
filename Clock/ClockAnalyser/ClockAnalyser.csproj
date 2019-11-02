@@ -9,7 +9,7 @@
     <Authors>Michal Motyčka</Authors>
     <Product>ClockAnalyser</Product>
     <Company>Michal Motyčka</Company>
-    <Description>Testable global DateTime.Now provider.</Description>
+    <Description>Analyser for Clock package.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
