@@ -3,4 +3,6 @@ Golbal Clock used to replace DateTime
 
 ## Nuget
 
-https://www.nuget.org/packages/Melchy.Clock/1.0.0
+https://www.nuget.org/packages/Clock
+
+https://www.nuget.org/packages/ClockTesting
