@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockTesting", "ClockTesting\ClockTesting.csproj", "{19D33FBE-1851-436F-AB39-B4D45B2603F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeProviderAnalyser", "DateTimeProviderAnalyser\DateTimeProviderAnalyser.csproj", "{0CBDA8CB-172F-4C1D-9DED-41B1E2296F06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockAnalyser", "ClockAnalyser\ClockAnalyser.csproj", "{0CBDA8CB-172F-4C1D-9DED-41B1E2296F06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

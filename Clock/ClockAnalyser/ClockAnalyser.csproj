@@ -1,0 +1,30 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Melchy.ClockAnalyser</PackageId>
+    <Authors>Michal Motyčka</Authors>
+    <Product>Melchy.Clock</Product>
+    <Company>Michal Motyčka</Company>
+    <Description>Analyser for Clock package.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
+    <PackageTags>DateTimeProvider, Clock, Analyser</PackageTags>
+    <PackageVersion>1.0.0</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-setversion" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.3.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.3.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="3.3.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,5 @@
-﻿using DateTimeProviderAnalyser.DateTimeNow;
+﻿using System;
+using ClockAnalyser;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -9,20 +10,6 @@ namespace Tests
 {
     public class ClockAnalyserTests : CodeFixVerifier
     {
-        private const string SourceCodeWithIssue = @"
-    using System;
-
-    namespace ConsoleApplication1
-    {
-        class TypeName
-        {
-            public TypeName()
-            {
-                var now = DateTimeOffset.Now;
-            }
-        }
-    }";
-
         private const string SourceCodeWithFix = @"
     using System;
 
@@ -32,10 +19,31 @@ namespace Tests
         {
             public TypeName()
             {
-                var now = DateTimeProvider.Now;
+                var now = Clock.UtcNow;
             }
         }
     }";
+        
+        
+        private string GetSourceCodeWithIssue(TimeNowTypes timeNowTypes)
+        {
+            var code = @"
+    using System;
+
+    namespace ConsoleApplication1
+    {{
+        class TypeName
+        {{
+            public TypeName()
+            {{
+                var now = {0};
+            }}
+        }}
+    }}";
+            string issue = GetIssueValue(timeNowTypes);
+            
+            return string.Format(code, issue);
+        }
 
         protected override CodeFixProvider GetCSharpCodeFixProvider()
         {
@@ -54,8 +62,12 @@ namespace Tests
             VerifyCSharpDiagnostic(source);
         }
 
-        [Fact]
-        public void IdentifySuggestedFix()
+        [Theory]
+        [InlineData(TimeNowTypes.DateTimeNow)]
+        [InlineData(TimeNowTypes.DateTimeOffsetNow)]
+        [InlineData(TimeNowTypes.DateTimeUtcNow)]
+        [InlineData(TimeNowTypes.DateTimeOffsetUtcNow)]
+        private void IdentifyDateTimeNowProblem(TimeNowTypes errorType)
         {
             var expected = new DiagnosticResult
             {
@@ -65,11 +77,15 @@ namespace Tests
                 Locations = new[] {new DiagnosticResultLocation("Test0.cs", 10, 27)}
             };
 
-            VerifyCSharpDiagnostic(SourceCodeWithIssue, expected);
+            VerifyCSharpDiagnostic(GetSourceCodeWithIssue(errorType), expected);
         }
 
-        [Fact]
-        public void ApplySuggestedFix()
+        [Theory]
+        [InlineData(TimeNowTypes.DateTimeNow)]
+        [InlineData(TimeNowTypes.DateTimeOffsetNow)]
+        [InlineData(TimeNowTypes.DateTimeUtcNow)]
+        [InlineData(TimeNowTypes.DateTimeOffsetUtcNow)]
+        private void ApplySuggestedFix(TimeNowTypes errorType)
         {
             var expected = new DiagnosticResult
             {
@@ -79,8 +95,36 @@ namespace Tests
                 Locations = new[] {new DiagnosticResultLocation("Test0.cs", 10, 27)}
             };
 
-            VerifyCSharpDiagnostic(SourceCodeWithIssue, expected);
-            VerifyCSharpFix(SourceCodeWithIssue, SourceCodeWithFix, null, true);
+            VerifyCSharpDiagnostic(GetSourceCodeWithIssue(errorType), expected);
+            VerifyCSharpFix(GetSourceCodeWithIssue(errorType), SourceCodeWithFix, null, true);
+        }
+        
+        
+        
+        private enum TimeNowTypes
+        {
+            DateTimeNow = 0,
+            DateTimeUtcNow = 1,
+            DateTimeOffsetNow = 2,
+            DateTimeOffsetUtcNow = 3
+        }
+        
+        
+        private string GetIssueValue(TimeNowTypes timeNowTypes)
+        {
+            switch (timeNowTypes)
+            {
+                case TimeNowTypes.DateTimeNow:
+                    return "DateTime.Now";
+                case TimeNowTypes.DateTimeUtcNow:
+                    return "DateTime.UtcNow";
+                case TimeNowTypes.DateTimeOffsetNow:
+                    return "DateTimeOffset.Now";
+                case TimeNowTypes.DateTimeOffsetUtcNow:
+                    return "DateTimeOffset.UtcNow";
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(timeNowTypes), timeNowTypes, null);
+            }
         }
     }
 }
