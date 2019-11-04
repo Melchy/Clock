@@ -6,7 +6,7 @@
     <title>ClockAnalyser</title>
     <authors>Michal Motyčka</authors>
     <owners>Michal Motyčka</owners>
-    <license>https://opensource.org/licenses/MIT</license>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <projectUrl>https://github.com/Melchy/Clock</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Analyser for Clock package.</description>

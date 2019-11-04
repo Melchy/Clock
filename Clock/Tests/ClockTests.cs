@@ -14,12 +14,13 @@ namespace Tests
             var anonymousTime = new DateTimeOffset(2000, 1, 1, 0, 0, 0, TimeSpan.Zero);
             const int anonymousDelay = 2000;
 
-            using var _ = new OverrideClock(anonymousTime);
-            
-            Task.Delay(anonymousDelay).Wait();
-            var timeAfterDelay = Clock.UtcNow;
+            using (new OverrideClock(anonymousTime))
+            {
+                Task.Delay(anonymousDelay).Wait();
+                var timeAfterDelay = Clock.UtcNow;
 
-            anonymousTime.IsSameOrEqualTo(timeAfterDelay);
+                anonymousTime.IsSameOrEqualTo(timeAfterDelay);
+            }
         }
 
         [Fact]
