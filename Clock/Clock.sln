@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockTesting", "ClockTestin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockAnalyser", "ClockAnalyser\ClockAnalyser.csproj", "{0CBDA8CB-172F-4C1D-9DED-41B1E2296F06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisableDateTimeNow", "DisableDateTimeNow\DisableDateTimeNow.csproj", "{EC129E24-F194-462B-8459-D63E34A34023}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{0CBDA8CB-172F-4C1D-9DED-41B1E2296F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CBDA8CB-172F-4C1D-9DED-41B1E2296F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CBDA8CB-172F-4C1D-9DED-41B1E2296F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC129E24-F194-462B-8459-D63E34A34023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC129E24-F194-462B-8459-D63E34A34023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC129E24-F194-462B-8459-D63E34A34023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC129E24-F194-462B-8459-D63E34A34023}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
