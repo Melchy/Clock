@@ -1,0 +1,7 @@
+﻿namespace NUnit.Framework
+{
+    public class Assert
+    {
+        public static void AreEqual(object expected, object actual) { }
+    }
+}
