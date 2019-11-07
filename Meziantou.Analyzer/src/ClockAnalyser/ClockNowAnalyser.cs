@@ -5,20 +5,20 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace Meziantou.Analyzer.Rules
+namespace ClockAnalyser
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public sealed class AbstractTypesShouldNotHaveConstructorsAnalyzer : DiagnosticAnalyzer
+    public sealed class ClockNowAnalyser : DiagnosticAnalyzer
     {
         private static readonly DiagnosticDescriptor s_rule = new DiagnosticDescriptor(
-            RuleIdentifiers.AbstractTypesShouldNotHaveConstructors,
-            title: "Abstract types should not have public or internal constructors",
-            messageFormat: "Abstract types should not have public or internal constructors",
-            RuleCategories.Design,
+            "ClockNowAnalyser",
+            title: "Use Clock.UtcNow instead of DateTime",
+            messageFormat: "Use Clock.UtcNow instead of DateTime",
+            "Design",
             DiagnosticSeverity.Warning,
             isEnabledByDefault: true,
-            description: "",
-            helpLinkUri: RuleIdentifiers.GetHelpUri(RuleIdentifiers.AbstractTypesShouldNotHaveConstructors));
+            description: "Use Clock so that date and time is abstracted and easier to test",
+            helpLinkUri: "https://github.com/Melchy/Clock");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(s_rule);
 

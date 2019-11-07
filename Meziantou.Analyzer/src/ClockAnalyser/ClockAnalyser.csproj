@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
     <PackageTags>DateTimeProvider, Clock, Analyser</PackageTags>
-    <PackageVersion>1.0.92</PackageVersion>
+    <PackageVersion>1.0.96</PackageVersion>
     <NoPackageAnalysis>true</NoPackageAnalysis>
   </PropertyGroup>
   <ItemGroup>
@@ -24,4 +24,13 @@
     <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath="" />
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <Features>strict</Features>
+  </PropertyGroup>
 </Project>

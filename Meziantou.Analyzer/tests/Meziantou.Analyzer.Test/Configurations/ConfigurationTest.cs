@@ -10,7 +10,7 @@ namespace Meziantou.Analyzer.Test.Rules
         private static ProjectBuilder CreateProjectBuilder()
         {
             return new ProjectBuilder()
-                .WithAnalyzer<AbstractTypesShouldNotHaveConstructorsAnalyzer>();
+                .WithAnalyzer<ClockNowAnalyser>();
         }
 
         [Fact]
