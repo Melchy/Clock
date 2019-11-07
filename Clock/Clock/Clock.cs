@@ -7,7 +7,7 @@ public static class Clock
 {
     private static Func<DateTimeOffset> _utcNow = () => DateTimeOffset.UtcNow;
 
-    private static AsyncLocal<Func<DateTimeOffset>> _override = new AsyncLocal<Func<DateTimeOffset>>();
+    private static AsyncLocal<Func<DateTimeOffset>?> _override = new AsyncLocal<Func<DateTimeOffset>?>();
 
     public static DateTimeOffset UtcNow => (_override.Value ?? _utcNow)();
 

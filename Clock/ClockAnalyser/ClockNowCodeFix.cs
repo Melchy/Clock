@@ -11,17 +11,14 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace ClockAnalyser
 {
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ClockNowCodeFix)), Shared]
-    public class ClockNowCodeFix : CodeFixProvider
+    [ExportCodeFixProvider(LanguageNames.CSharp), Shared]
+    public sealed class ClockNowCodeFix : CodeFixProvider
     {
-        public sealed override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(ClockNowAnalyser.DiagnosticId);
+        public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create("ClockNowAnalyser");
 
-        public sealed override FixAllProvider GetFixAllProvider()
-        {
-            return WellKnownFixAllProviders.BatchFixer;
-        }
+        public override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
 
-        public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
+        public override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
             var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
 
@@ -30,7 +27,7 @@ namespace ClockAnalyser
 
             var expressionSyntax = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
 
-            var codeAction = CodeAction.Create(ClockNowAnalyser.Title, cancellationToken => ChangeToDateTimeProvider(context.Document, expressionSyntax, cancellationToken), ClockNowAnalyser.Title);
+            var codeAction = CodeAction.Create("Use Clock.UtcNow instead of DateTime", cancellationToken => ChangeToDateTimeProvider(context.Document, expressionSyntax, cancellationToken), "Use Clock.UtcNow instead of DateTime");
             context.RegisterCodeFix(codeAction, diagnostic);
         }
 
