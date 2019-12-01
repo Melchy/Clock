@@ -2,6 +2,12 @@
 
 This package provides thread safe testable global `DateTimeUtc` provider.
 
+## NuGet
+
+[Clock](https://www.nuget.org/packages/Clock)
+
+[ClockTesting](https://www.nuget.org/packages/ClockTesting)
+
 ## How to use
 
 Install package [Clock](https://www.nuget.org/packages/Clock) and use ``Clock.UtcNow`` instead of ``DateTimeOffest.UtcNow``.
@@ -24,9 +30,3 @@ This analyzer is very restrictive to help programmer avoid mistakes. If you need
 ## How it works
 
 Clock package contains static class Clock. Clock has internal static property which provides current time. This property is set by default to ``DateTimeOffset.UtcNow()``. Clock has internals visible to ClockTesting which allows ClockTesting package set Time provider. OverrideClock then overrides clock provider and Dispose method restarts it back to ``DateTimeOffset.UtcNow()``.
-
-## NuGet
-
-[Clock](https://www.nuget.org/packages/Clock)
-
-[ClockTesting](https://www.nuget.org/packages/ClockTesting)
