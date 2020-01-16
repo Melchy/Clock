@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Nullable>enable</Nullable>
+        <TargetFramework>netstandard1.3</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>ClockTesting</PackageId>
         <Authors>Michal Motyčka</Authors>
@@ -12,7 +11,7 @@
         <PackageProjectUrl>https://github.com/Melchy/Clock</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Melchy/Clock</RepositoryUrl>
         <PackageTags>DateTimeProvider, Clock, Testing</PackageTags>
-        <PackageVersion>1.0.1</PackageVersion>
+        <PackageVersion>1.0.3</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
