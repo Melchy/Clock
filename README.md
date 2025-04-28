@@ -1,6 +1,6 @@
 # OBSOLETE
 
-This package is now obsolete use [TimeProvider](https://learn.microsoft.com/en-us/dotnet/standard/datetime/timeprovider-overview) instead and [BannedApi analyzer](https://stackoverflow.com/a/77051808) to replace the included annalyzer. 
+This package is now obsolete. Use [TimeProvider](https://learn.microsoft.com/en-us/dotnet/standard/datetime/timeprovider-overview) and [BannedApi analyzer](https://stackoverflow.com/a/77051808) to replace the included annalyzer. 
 
 # Clock
 
