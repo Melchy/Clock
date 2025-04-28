@@ -1,3 +1,7 @@
+# OBSOLETE
+
+This package is now obsolete use [TimeProvider](https://learn.microsoft.com/en-us/dotnet/standard/datetime/timeprovider-overview) instead and [BannedApi analyzer](https://stackoverflow.com/a/77051808) to replace the included annalyzer. 
+
 # Clock
 
 This package provides thread safe testable global `DateTimeUtc` provider.
